@@ -1,0 +1,44 @@
+{
+  "expo": {
+    "name": "小鸡一笔",
+    "slug": "CashFlow",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/logo.png",
+    "scheme": "CashFlow",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/logo.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#E6F4FE",
+        "foregroundImage": "./assets/logo.png",
+        "backgroundImage": "./assets/logo.png",
+        "monochromeImage": "./assets/logo.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "package": "com.danniellee.CashFlow"
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/logo.png"
+    },
+    "plugins": ["expo-router", "expo-font", "expo-web-browser", "expo-sqlite"],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "08f0f985-ee32-468b-990b-89d034ca8925"
+      }
+    }
+  }
+}

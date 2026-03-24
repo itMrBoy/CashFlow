@@ -30,6 +30,17 @@
 
 ---
 
+### 📱 应用截图
+
+<div align="center">
+  <img src="./assets/screenshots/1.jpg" width="200" alt="首页看板" />
+  <img src="./assets/screenshots/2.jpg" width="200" alt="收支流水" />
+  <img src="./assets/screenshots/3.jpg" width="200" alt="订阅管理" />
+  <img src="./assets/screenshots/4.jpg" width="200" alt="应用设置" />
+</div>
+
+---
+
 ### ✨ 核心特性
 
 - **🎯 首页看板 (Dashboard)**
@@ -118,4 +129,4 @@ eas build -p ios --profile preview
 
 如果你喜欢这个狂野的风格，欢迎提交 Issue 或 PR。
 
-**Design & Code with ❤️ by Antigravity**
+**Design & Code with ❤️ by Danniel & Antigravity**

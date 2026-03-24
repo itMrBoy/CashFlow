@@ -4,10 +4,11 @@
   <p><strong>Neo-Brutalism 风格的个人记账工具</strong></p>
 
   <p>
-    <img src="https://img.shields.io/badge/React_Native-0.74+-61DAFB?logo=react&logoColor=black&style=for-the-badge" alt="React Native" />
-    <img src="https://img.shields.io/badge/Expo-SDK_51-000020?logo=expo&logoColor=white&style=for-the-badge" alt="Expo" />
+    <img src="https://img.shields.io/badge/React_Native-0.81+-61DAFB?logo=react&logoColor=black&style=for-the-badge" alt="React Native" />
+    <img src="https://img.shields.io/badge/Expo-SDK_54-000020?logo=expo&logoColor=white&style=for-the-badge" alt="Expo" />
     <img src="https://img.shields.io/badge/Style-Neo--Brutalism-CCFF00?style=for-the-badge" alt="Style" />
     <img src="https://img.shields.io/badge/License-MIT-black?style=for-the-badge" alt="License" />
+    <img src="https://img.shields.io/badge/Pencil-2.0-CCFF00?style=for-the-badge" alt="Pencil" />
   </p>
 
   <p>
@@ -57,10 +58,13 @@
 
 ### 🛠️ 技术实现
 
-- **核心框架**: React Native (Expo SDK 51)
-- **样式系统**: NativeWind / Tailwind CSS
-- **动效引擎**: Moti / Reanimated
-- **数据引擎**: SQLite / AsyncStorage
+- **核心框架**: React Native (Expo SDK 54)
+- **状态管理**: Zustand
+- **样式引擎**: NativeWind (Tailwind CSS)
+- **数据库**: SQLite (Expo SQLite)
+- **图标展示**: Lucide React Native
+- **动效引擎**: React Native Reanimated
+- **UI 设计**: 使用 **Pencil** 驱动，实现 100% Neo-Brutalism 设计还原
 
 ---
 
@@ -76,6 +80,26 @@ npm install
 
 # 3. 启动开发服务器
 npx expo start -c | npm run start
+```
+
+---
+
+### 📦 打包与发布
+
+本项目使用 **EAS Build** 进行打包。
+
+```bash
+# 安装 EAS CLI
+npm install -g eas-cli
+
+# 生成 Android APK (预览版)
+eas build -p android --profile preview
+
+# 生成 Android App Bundle (生产版)
+eas build -p android --profile production
+
+# 生成 iOS 模拟器安装包
+eas build -p ios --profile preview
 ```
 
 ---

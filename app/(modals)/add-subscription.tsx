@@ -108,7 +108,7 @@ export default function AddSubscriptionModal() {
   const [firstBillingDate, setFirstBillingDate] = useState(new Date());
   const [showDatePicker, setShowDatePicker] = useState(false);
   const [showTimePicker, setShowTimePicker] = useState(false);
-  const [syncToTransaction, setSyncToTransaction] = useState(true);
+  const [syncToTransaction, setSyncToTransaction] = useState(false); // 暂时禁用，防止 double counting (index.tsx 已统计订阅)
   const [note, setNote] = useState("");
 
   const params = useLocalSearchParams<{ data?: string }>();
@@ -205,6 +205,10 @@ export default function AddSubscriptionModal() {
         await insertSubscription(subscription);
       }
 
+      /* 
+      // 暂时注释掉同步流水功能
+      // 原因：app/(tabs)/index.tsx 的结余统计逻辑中，已经分别统计了流水和订阅
+      // 如果在这里同步记一笔支出，会导致该笔支出在结余计算中被重复扣除
       if (syncToTransaction && !isEdit) { // Only sync for new subscriptions
         await insertTransaction({
           id: (Date.now() + 1).toString(),
@@ -218,6 +222,7 @@ export default function AddSubscriptionModal() {
           created_at: new Date().toISOString(),
         });
       }
+      */
 
       triggerRefresh();
       router.back();
@@ -417,6 +422,8 @@ export default function AddSubscriptionModal() {
         className="px-6 pt-4 gap-[24px]"
       >
         {/* RECORD EXPENSE TODAY */}
+        {/* 暂时注释掉该功能开关，防止结余重复统计 (index.tsx 已经分别汇总了流水和订阅) */}
+        {/* 
         <View className="flex-row items-center justify-between">
           <Text className="font-black text-[16px] uppercase leading-[24px]">
             立即记一笔支出
@@ -426,6 +433,7 @@ export default function AddSubscriptionModal() {
             onValueChange={setSyncToTransaction}
           />
         </View>
+        */}
 
         {/* Submit Button */}
         <BrutaButton

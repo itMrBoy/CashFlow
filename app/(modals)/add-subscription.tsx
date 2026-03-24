@@ -6,6 +6,8 @@ import {
   TouchableOpacity,
   Alert,
   TextInput,
+  KeyboardAvoidingView,
+  Platform,
 } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useRouter, useLocalSearchParams } from "expo-router";
@@ -226,7 +228,10 @@ export default function AddSubscriptionModal() {
   };
 
   return (
-    <View className="flex-1 bg-[#F4F4F0]">
+    <KeyboardAvoidingView 
+      behavior={Platform.OS === "ios" ? "padding" : "height"} 
+      className="flex-1 bg-[#F4F4F0]"
+    >
       {/* Header */}
       <View
         style={{ paddingTop: insets.top + 16 }}
@@ -431,6 +436,6 @@ export default function AddSubscriptionModal() {
           onPress={handleSave}
         />
       </View>
-    </View>
+    </KeyboardAvoidingView>
   );
 }

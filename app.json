@@ -23,7 +23,8 @@
         "monochromeImage": "./assets/logo.png"
       },
       "predictiveBackGestureEnabled": false,
-      "package": "com.danniellee.CashFlow"
+      "package": "com.danniellee.CashFlow",
+      "softwareKeyboardLayoutMode": "pan"
     },
     "web": {
       "bundler": "metro",

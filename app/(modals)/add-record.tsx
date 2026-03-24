@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View, Text, ScrollView, TouchableOpacity, Alert } from "react-native";
+import { View, Text, ScrollView, TouchableOpacity, Alert, KeyboardAvoidingView, Platform } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useRouter, useLocalSearchParams } from "expo-router";
 import DateTimePicker, {
@@ -196,7 +196,10 @@ export default function AddRecordModal() {
   };
 
   return (
-    <View className="flex-1 bg-primary">
+    <KeyboardAvoidingView 
+      behavior={Platform.OS === "ios" ? "padding" : "height"} 
+      className="flex-1 bg-primary"
+    >
       {/* Header */}
       <View
         style={{ paddingTop: insets.top + 16 }}
@@ -415,6 +418,6 @@ export default function AddRecordModal() {
           onPress={handleSave}
         />
       </View>
-    </View>
+    </KeyboardAvoidingView>
   );
 }

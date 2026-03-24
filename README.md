@@ -1,6 +1,6 @@
 <div align="center">
   <img src="./assets/logo.png" width="120" height="120" alt="小鸡一笔 Logo" />
-  <h1>小鸡一笔 (CashFlow Vibe)</h1>
+  <h1>小鸡一笔 (CashFlow)</h1>
   <p><strong>Neo-Brutalism 风格的个人记账工具</strong></p>
 
   <p>

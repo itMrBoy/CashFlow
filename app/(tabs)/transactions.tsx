@@ -1,4 +1,10 @@
-import React, { useEffect, useState, useCallback, useRef, useMemo } from "react";
+import React, {
+  useEffect,
+  useState,
+  useCallback,
+  useRef,
+  useMemo,
+} from "react";
 import {
   View,
   Text,
@@ -11,7 +17,6 @@ import {
   ScrollView,
 } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { Smile } from "@/components/ui/Smile";
 import { StatusEmoji } from "@/components/ui/StatusEmoji";
 import { useRouter } from "expo-router";
 import {
@@ -33,7 +38,11 @@ import { BrutaCard } from "@/components/ui/BrutaCard";
 import { BrutaInput } from "@/components/ui/BrutaInput";
 import { BrutaButton } from "@/components/ui/BrutaButton";
 import { CircleButton } from "@/components/ui/CircleButton";
-import { useStore, isDefaultDateRange, isInitialFilters } from "@/store/useStore";
+import {
+  useStore,
+  isDefaultDateRange,
+  isInitialFilters,
+} from "@/store/useStore";
 import {
   getTransactions,
   getFilteredTotals,
@@ -206,21 +215,21 @@ function SummaryBar({
           { position: "absolute", top: -15, right: 10, zIndex: 10 },
         ]}
       >
-      <BrutaCard
-        bgClassName={balanceValue >= 0 ? "bg-[#00B800]" : "bg-[#FF0000]"}
-        className="px-4 py-2 items-center justify-center border-4"
-      >
-        <View className="items-center">
-          <Text className="text-[10px] font-black text-white uppercase mb-1">
-            结余
-          </Text>
-          <Text className="text-xl font-black text-white">
-            {balanceValue.toLocaleString(undefined, {
-              minimumFractionDigits: 2,
-            })}
-          </Text>
-        </View>
-      </BrutaCard>
+        <BrutaCard
+          bgClassName={balanceValue >= 0 ? "bg-[#00B800]" : "bg-[#FF0000]"}
+          className="px-4 py-2 items-center justify-center border-4"
+        >
+          <View className="items-center">
+            <Text className="text-[10px] font-black text-white uppercase mb-1">
+              结余
+            </Text>
+            <Text className="text-xl font-black text-white">
+              {balanceValue.toLocaleString(undefined, {
+                minimumFractionDigits: 2,
+              })}
+            </Text>
+          </View>
+        </BrutaCard>
       </Animated.View>
     </View>
   );
@@ -251,10 +260,15 @@ export default function TransactionsScreen() {
 
   const emojiStatus = useMemo(() => {
     const balance = totals.income - totals.expense;
-    if (balance < 0) return 'angry';
-    const ratio = totals.income > 0 ? totals.expense / totals.income : (totals.expense > 0 ? 1 : 0);
-    if (ratio >= 0.7) return 'bad';
-    return 'smile';
+    if (balance < 0) return "angry";
+    const ratio =
+      totals.income > 0
+        ? totals.expense / totals.income
+        : totals.expense > 0
+          ? 1
+          : 0;
+    if (ratio >= 0.7) return "bad";
+    return "smile";
   }, [totals]);
 
   const { fabAnim, fabScrollProps, animateFab } = useFabController();

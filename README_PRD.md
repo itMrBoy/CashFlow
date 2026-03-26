@@ -1,4 +1,4 @@
-# CashFlow Vibe - Sprint 1 需求文档 (PRD)
+# CashFlow - Sprint 1 需求文档 (PRD)
 
 ## 1. 产品概述
 

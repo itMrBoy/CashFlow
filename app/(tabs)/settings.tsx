@@ -19,7 +19,7 @@ export default function SettingsScreen() {
       const data = await db.exportAllData();
       const jsonString = JSON.stringify(data, null, 2);
       const fileUri =
-        FileSystem.documentDirectory + "cashflow_vibe_backup.json";
+        FileSystem.documentDirectory + "cashflow_backup.json";
 
       await FileSystem.writeAsStringAsync(fileUri, jsonString);
 
